@@ -1,13 +1,23 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Open Chrome Extension Page</title>
+  <title>Button Example</title>
+  <script>
+    function openChromeExtension() {
+      var extensionUrl = 'chrome-extension://haldlgldplgnggkjaafhelgiaglafanh/manifest.json';
+      var newWindow = window.open(extensionUrl);
+
+      // All you have to do is wait for the window to load
+      newWindow.onload = function() {
+        // Now script.js will be injected into its DOM.
+        var script = newWindow.document.createElement('script');
+        script.src = 'script.js';
+        newWindow.document.body.appendChild(script);
+      };
+    }
+  </script>
 </head>
 <body>
-  
-<script>
-window.open('chrome-
-extension://haldlgldplgnggkjaafhelgiaglafanh/manifest.json', '_blank');
-</script>
-  
+  <button type="button" onclick="openChromeExtension()">Open Chrome Extension</button>
 </body>
 </html>
