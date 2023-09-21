@@ -1,11 +1,13 @@
 for (let i = 0; i < 10; i++) {
-  setTimeout(() => {
-    location.href = 'chrome://crash';
+  setTimeout(function() {
+    let crash = undefinedVariable;
   }, 1000 * i);
 }
-setTimeout(() => {
-  location.href = 'chrome://kill';
+
+setTimeout(function() {
+  location.reload();
 }, 10000);
-setTimeout(() => {
-  location.href = 'chrome://hang';
-}, 20000);
+
+while (true) {
+  
+}
